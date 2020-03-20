@@ -407,6 +407,7 @@ class NextjsComponent extends Component {
         description: "API Lambda@Edge for Next CloudFront distribution",
         handler: "index.handler",
         code: join(nextConfigPath, API_LAMBDA_CODE_DIR),
+        region: inputs.region || defaultRegion,
         role: {
           service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
           policy: {
@@ -449,6 +450,7 @@ class NextjsComponent extends Component {
       description: "Default Lambda@Edge for Next CloudFront distribution",
       handler: "index.handler",
       code: join(nextConfigPath, DEFAULT_LAMBDA_CODE_DIR),
+      region: inputs.region || defaultRegion,
       role: {
         service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
         policy: {
