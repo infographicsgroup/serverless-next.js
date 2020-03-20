@@ -82,6 +82,7 @@ describe("deploy tests", () => {
         code: path.join(fixturePath, DEFAULT_LAMBDA_CODE_DIR),
         memory: 512,
         timeout: 10,
+        region: "us-east-1",
         role: {
           service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
           policy: {
@@ -99,6 +100,7 @@ describe("deploy tests", () => {
         code: path.join(fixturePath, API_LAMBDA_CODE_DIR),
         memory: 512,
         timeout: 10,
+        region: "us-east-1",
         role: {
           service: ["lambda.amazonaws.com", "edgelambda.amazonaws.com"],
           policy: {
@@ -144,7 +146,8 @@ describe("deploy tests", () => {
               }
             }
           }
-        ]
+        ],
+        region: "us-east-1"
       });
     });
   });
